@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rainbow Store</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <div class="left-section">
+        <img src="images/product5.jpg" alt="Sale Image" />
+      </div>
+
+      <div class="right-section">
+        <h2>Special Offer!</h2>
+        <p>Get exclusive deals on our latest products. Limited time offer!</p>
+        <button onclick="openPayPalModal()">Buy Now!!!</button>
+      </div>
+    </div>
+
+    <div id="userModal" class="modal">
+      <h2>User Account</h2>
+      <form id="registrationForm" onsubmit="registerUser(event)">
+        <label for="regUsername">Username:</label>
+        <input type="text" id="regUsername" required />
+
+        <label for="regPassword">Password:</label>
+        <input type="password" id="regPassword" required />
+
+        <button type="submit">Register</button>
+      </form>
+
+      <form id="loginForm" onsubmit="loginUser(event)">
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" required />
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" required />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <button onclick="closeUserModal()">Close</button>
+    </div>
+
+    <!-- Your existing modal and overlay elements -->
+    <div id="overlay"></div>
+    <div id="paypalModal">
+      <div id="paypal-button-container"></div>
+      <button onclick="closePayPalModal()">Close</button>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AWNWBx75ALr4LIeEgqA_W3nvQTX1pLg4KVhyxTvaJzJYnouWSFBkf2fpn4GwBlkDjG2lWrDmmItQwj7J&currency=USD"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!-- products.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Products</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-sort-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name"
+        oninput="searchProducts()"
+      />
+      <select id="sortSelect" onchange="sortProducts(this.value)">
+        <option value="">Sort By</option>
+        <option value="nameAsc">Name A-Z</option>
+        <option value="nameDesc">Name Z-A</option>
+        <option value="priceAsc">Price Low to High</option>
+        <option value="priceDesc">Price High to Low</option>
+      </select>
+    </div>
+
+    <section id="products"></section>
+
+    <footer>
+      <p>&copy; 2023 Rainbow Store. All rights reserved.</p>
+    </footer>
+
+    <div id="cartModal" class="modal">
+      <h2>Shopping Cart</h2>
+      <ul id="cartItems"></ul>
+      <p>Total: M<span id="cartTotal">0.00</span></p>
+      <button onclick="openPayPalModal()">Purchase</button>
+      <button onclick="closeModal()">Close</button>
+    </div>
+
+    <div id="overlay"></div>
+    <div id="paypalModal">
+      <div id="paypal-button-container"></div>
+      <button onclick="closePayPalModal()">Close</button>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AWNWBx75ALr4LIeEgqA_W3nvQTX1pLg4KVhyxTvaJzJYnouWSFBkf2fpn4GwBlkDjG2lWrDmmItQwj7J&currency=USD"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
